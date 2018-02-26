@@ -1,3 +1,9 @@
-.title-image {
-    max-height: 10px;
+.title-main1 {
+    font-size: 50px;
+    text-align: center;
+}
+#map {
+    margin: auto;
+    height: 700px;
+    width: 900px;
 }
