@@ -1,61 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Python Programming Tutorials</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
-	<link href="{{ url_for('static', filename='css/myStyles.css') }}" rel="stylesheet">
-	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-</head>
-
-<body class="body">
-	<header class="navbar navbar-expand navbar-dark bg-dark">
-		<img src="static/images/house2.png" style="max-height: 80px">
-		<a class="navbar-brand" href="#"><h2>Affluent Areas</h2></a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
-      			<li class="nav-item active">
-        			<a class="nav-link" href="#"><h5>Home</h5><span class="sr-only">(current)</span></a>
-      			</li>
-      			<li class="nav-item">
-        			<a class="nav-link" href="#"><h5>Features</h5></a>
-      			</li>
-      			<li class="nav-item">
-					<a class="nav-link" href="#"><h5>Pricing</h5></a>
-      			</li>
-    		</ul>
-		</div>
-		<a href="/SignIn/">
-			<button type="button" class="btn btn-primary" aria-label="Right Align" style="text-align: centre; font-size: 18px; margin-top: 5px; margin-bottom: 5px; height: 64px; width: 110px; margin-right: 25px margin-left: 15px">
-				  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign In
-			</button>
-		</a>>
-	</header>
-
-	<div class="container-fluid">
-		<div class="title-main1">Affluent Areas</div>
-
-		<div id="map"></div>
-		<script>
-		  function initMap() {
-			var sydney = {lat: -33.863, lng: 151.044};
-			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 10,
-			  center: sydney
-			});
-			var marker = new google.maps.Marker({
-			  position: sydney,
-			  map: map
-			});
-		  }
-		</script>
-		<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoOqTx3aPFSI4C53Gi6qPvCewm2OIey2k&callback=initMap">
-		</script>
-	</div>
-</body>
-</html>
+{% extends "header.html" %}
+{% block body %}
+<div class="title-main1"><b>Find the next Mayfair!</b></div>
+<div id="map"></div>
+<script>
+  function initMap() {
+	var sydney = {lat: -33.863, lng: 151.044};
+	var map = new google.maps.Map(document.getElementById('map'), {
+	  zoom: 10,
+	  center: sydney
+	});
+	var marker = new google.maps.Marker({
+	  position: sydney,
+	  map: map
+	});
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoOqTx3aPFSI4C53Gi6qPvCewm2OIey2k&callback=initMap">
+</script>
+<div class="row no-gutters" id="key">
+	Key:
+</div>
+{% endblock %}
