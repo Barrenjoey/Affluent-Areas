@@ -6,6 +6,9 @@ app = Flask(__name__)
 def homepage():
     return render_template("main.html")
 
+@app.route('/SignIn/')
+def sign_In():
+    return render_template("signIn.html")
 
 if __name__ == "__main__":
     app.run()

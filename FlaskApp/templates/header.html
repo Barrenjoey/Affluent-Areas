@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Affluent Areas</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/myStyles.css') }}" rel="stylesheet">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<header class="navbar navbar-expand navbar-dark bg-dark">
+	<img src="{{ url_for('static', filename='images/house2.png') }}" style="max-height: 80px">
+	<a class="navbar-brand" href="/" style="padding-left: 10px"><h2>Affluent Areas</h2></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarText">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/"><h5>Home</h5><span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><h5>About</h5></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><h5>Routes</h5></a>
+			</li>
+		</ul>
+	</div>
+	<a href="/SignIn/">
+		<button type="button" class="btn btn-primary" aria-label="Right Align" style="text-align: centre; font-size: 18px; margin-top: 5px; margin-bottom: 5px; height: 64px; width: 110px; margin-right: 25px margin-left: 15px">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign In
+		</button>
+	</a>
+</header>
+<body>
+	<div class="h-100 container-fluid" style="background-color: rgb(116, 123, 137); height:100%">
+		<div class="container pt-3">
+		{% block body %}{% endblock %}
+
+		</div>
+	</div>
+</body>
+
+
+<div class="footer-container" style="background-color: #ececec">
+	<footer>
+	Oh hello, im a footer
+	</footer>
+</div>
+</html>
