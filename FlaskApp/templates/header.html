@@ -21,22 +21,37 @@
 				<a class="nav-link" href="/"><h5>Home</h5><span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"><h5>About</h5></a>
+				<a class="nav-link" href="/hello/"><h5>About</h5></a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" href="#"><h5>Routes</h5></a>
 			</li>
 		</ul>
 	</div>
-	<a href="/SignIn/">
-		<button type="button" class="btn btn-primary" aria-label="Right Align" style="text-align: centre; font-size: 18px; margin-top: 5px; margin-bottom: 5px; height: 64px; width: 110px; margin-right: 25px margin-left: 15px">
-			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign In
+	<a href="/LogIn/">
+		<button type="button" class="btn btn-primary" aria-label="Right Align" id="btn-LogIn">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Log In
+		</button>
+	</a>
+	<a href="/SignUp/">
+		<button type="button" class="btn btn-primary" aria-label="Right Align" id="btn-SignUp">
+			  <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Sign Up
 		</button>
 	</a>
 </header>
 <body>
-	<div class="h-100 container-fluid" style="background-color: rgb(116, 123, 137); height:100%">
+	<div class="h-100 container-fluid" style="background-color: rgb(142, 148, 159); height:100%">
 		<div class="container pt-3">
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			{% for message in messages %}
+			  <div class="alert alert-warning alert-dismissible" role="alert">
+			  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+				{{message}}
+			  </div>
+			{% endfor %}
+		  {% endif %}
+		{% endwith %}
 		{% block body %}{% endblock %}
 
 		</div>
